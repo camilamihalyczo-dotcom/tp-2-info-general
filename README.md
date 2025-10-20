@@ -1,28 +1,41 @@
 ***
 
-## **TP2 - Sitio Web de Artista o Colectivo Artístico**
+# TP2 - "SYNTAX ERROR" | Sitio Inmersivo sobre VNS Matrix
 
-### **Descripción General**
+## Descripción General
 
-Este repositorio contiene el desarrollo del **Trabajo Práctico N°2** de la materia Informatica General, planificación, diseño y desarrollo de un **sitio web responsive** para un artista o colectivo artístico.
+Este repositorio contiene el desarrollo del Trabajo Práctico N°2 de la materia Informática General.
 
-El proyecto se está llevando a cabo utilizando **HTML, CSS y JavaScript**, e incorporará un **Framework CSS** (Tailwind) y una **librería/framework JavaScript** para añadir interactividad y funcionalidad.
+El proyecto se titula **"SYNTAX ERROR"**, un sitio web inmersivo y responsive sobre el colectivo artístico ciberfeminista **VNS Matrix**. El concepto central del sitio es simular la interfaz de un sistema operativo "corrupto" de los años 90, alineado con la estética **Glitch Art** y los conceptos de sabotaje ("somos el virus") del colectivo.
 
-### **Estado Actual**
+El proyecto utilizará HTML, CSS y JavaScript, incorporando un Framework CSS (Tailwind) y una librería/framework JavaScript para añadir interactividad y funcionalidad.
 
-* **FASE INICIAL:** Configuración del repositorio y creación del *esqueleto básico* del proyecto.
-* **PRÓXIMO PASO:** Investigación profunda sobre la temática asignada, recopilación de referencias y definición de la arquitectura del sitio (objetivos, *target*, mapa de navegación).
+## Estado Actual
 
-### **Requisitos Clave del Proyecto**
+* **FASE 1: INVESTIGACIÓN Y ESTRATEGIA (Completada)**
+    * Realicé la investigación de contenido sobre VNS Matrix, sus obras y manifiestos.
+    * Se completó la estrategia de diseño, definiendo el target, los objetivos y el análisis de referentes de páginas web.
+    * Ambos estan en un PDF con su bibliografía correspondiente.
+    * Elegí el concepto ("SYNTAX ERROR"), la estética (Glitch/Slime) y el mapa de navegación (`index.html`, `db-art.html`, etc.).
 
-* Desarrollo en HTML, CSS y JavaScript.
+* **FASE 2: LAYOUT Y DISEÑO (Completada)**
+    * Se definió el layout basado en "ventanas flotantes" (simulando un escritorio de SO) y la paleta de colores (#39FF14, #FF00FF, #ADFF2F).
+    * Boceto de la página principal (`index.html`) y una secundaria (`db-art.html`).
+
+* **FASE 3: DESARROLLO (En Progreso)**
+    * **PRÓXIMO PASO:** Maquetado (HTML/CSS) del layout principal basado en "ventanas" flotantes y la estética de terminal.
+    * Implementación de la galería de obras (`db-art.html`).
+
+## Requisitos Clave del Proyecto
+
+* Desarrollo en **HTML, CSS y JavaScript**.
 * Diseño **responsive**.
-* Uso de un **Framework CSS** y una **Librería/Framework JavaScript** compatible.
+* Uso de un **Framework CSS** (Bootstrap/Tailwind) y una **Librería/Framework JavaScript** compatible.
 * Funcionalidad JavaScript mínima:
-    * **Galería de fotos/multimedia.**
-    * **Validación de formulario de contacto.**
-    * Una funcionalidad extra a criterio.
-* Mínimo de **9 archivos HTML** (Home, 4 Secciones Principales, 2 Subsecciones, Contacto, etc).
+    * **Galería** de fotos/multimedia (`db-art.html`).
+    * **Validación** de formulario de contacto (`pages/contact.html`).
+    * Una funcionalidad extra a criterio (ej. filtros de galería, ventanas arrastrables).
+* Mínimo de **9 archivos HTML** (Home, 4 Secciones Principales, 2 Subsecciones, Contacto, Alumn@).
 * Desarrollo gestionado a través de **GitHub** y publicación vía **GitHub Pages**.
 
 ***
