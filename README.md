@@ -15,14 +15,14 @@ El proyecto utilizará HTML, CSS y JavaScript, incorporando un Framework CSS (Ta
 * **FASE 1: INVESTIGACIÓN Y ESTRATEGIA (Completada)**
     * Realicé la investigación de contenido sobre VNS Matrix, sus obras y manifiestos.
     * Se completó la estrategia de diseño, definiendo el target, los objetivos y el análisis de referentes de páginas web.
-    * Ambos estan en un PDF con su bibliografía correspondiente.
+    * Ambos estan en un PDF con su bibliografía correspondiente acá: `https://docs.google.com/document/d/1Y9SMA3SvBfVkYGeSMHHOW_54wyioSiffcBuczardOX0/edit?usp=drivesdk`
     * Elegí el concepto ("SYNTAX ERROR"), la estética (Glitch/Slime) y el mapa de navegación (`index.html`, `db-art.html`, etc.).
 
-* **FASE 2: LAYOUT Y DISEÑO (Completada)**
+* **FASE 2: LAYOUT Y DISEÑO (En proceso)**
     * Se definió el layout basado en "ventanas flotantes" (simulando un escritorio de SO) y la paleta de colores (#39FF14, #FF00FF, #ADFF2F).
-    * Boceto de la página principal (`index.html`) y una secundaria (`db-art.html`).
+    * Boceto de la página principal (`index.html`) y una secundaria (`db-art.html`). Faltaría terminar el esquema para iniciar con el maquetado visual.
 
-* **FASE 3: DESARROLLO (En Progreso)**
+* **FASE 3: DESARROLLO (En proceso)**
     * **PRÓXIMO PASO:** Maquetado (HTML/CSS) del layout principal basado en "ventanas" flotantes y la estética de terminal.
     * Implementación de la galería de obras (`db-art.html`).
 
