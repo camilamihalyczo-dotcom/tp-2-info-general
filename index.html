@@ -2,42 +2,145 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="SYNTAX ERROR - Terminal estilo web. Acceso a manifesto, db-art, log, media protocol y contacto." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SYNTAX ERROR - Sitio inmersivo sobre el colectivo ciberfeminista VNS Matrix." />
     <title>SYNTAX ERROR - [HOME]</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css" /> 
     <link rel="icon" type="image/png" href="favicon.png" />
-</head>
-<body>
-    <main class="window" id="terminal" role="main" aria-label="Terminal principal">
-        <header class="window-header" role="banner">
-            <h1>SYNTAX ERROR - TERMINAL</h1>
-        </header>
-
-        <section class="window-body" role="region" aria-label="Contenido principal">
-            <p class="prompt">C:\VNS_MATRIX\&gt;</p>
-
-            <nav class="main-nav" aria-label="Navegación principal">
-                <ul>
-                    <li><a href="manifesto.html">[ manifest.exe ]</a></li>
-                    <li><a href="db-art.html">[ db-art.exe ]</a></li>
-                    <li><a href="log-exhibits.html">[ log.exe ]</a></li>
-                    <li><a href="media-protocol.html">[ comms.exe ]</a></li>
-                    <li><a href="pages/contact.html">[ contact.exe ]</a></li>
-                    <li><a href="pages/credenciales.html">[ id-access.exe ]</a></li>
-                </ul>
-            </nav>
-        </section>
-
-        <footer class="window-footer" role="contentinfo">
-            <small>© <span id="year"></span> SYNTAX ERROR</small>
-        </footer>
-    </main>
 
     <script>
-        // small enhancement: set current year for footer
-        (function(){ document.getElementById('year').textContent = new Date().getFullYear(); })();
+      tailwind.config = {
+        theme: {
+          extend: {
+            // Paleta de colores "SYNTAX ERROR"
+            colors: {
+              // Fucsia/magenta como color primario
+              'neon-fuchsia': {
+                '300': '#f0abfc',
+                '400': '#e879f9',
+                '500': '#d946ef', // Acento principal
+                '600': '#c026d3', // Botones
+              },
+              // Colores para el "Debug Mode" (JS Toggle)
+              'neon-cyan': '#22d3ee',
+              'neon-lime': '#a3e636',
+            },
+            // Tipografía 
+            fontFamily: {
+              'mono': ['"IBM Plex Mono"', 'monospace'], // Para cuerpo de texto
+              'sans': ['Oswald', 'Impact', 'sans-serif'], // Para titulares
+            },
+            // Sombra Neón
+            boxShadow: {
+              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+            }
+          }
+        }
+      }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-black text-gray-300 font-mono pt-20">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+        
+        <a href="index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
+            SYNTAX ERROR
+        </a>
+
+        <nav class="hidden md:flex gap-4">
+            <a href="manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifesto</a>
+            <a href="db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="pages/contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+        </nav>
+
+        <button id="menu-btn" class="md:hidden z-50">
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </header>
+
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifesto</a>
+        <a href="db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
+        <a href="log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
+        <a href="media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="pages/contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
+    </div>
+
+
+    <main class="container mx-auto px-4 py-12">
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="flex flex-col gap-4">
+                <p class="text-fuchsia-500 text-lg">[ TRANSMISIÓN INICIAL... ]</p>
+                
+                <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg">
+                    EL VIRUS DEL NUEVO DESORDEN MUNDIAL
+                </h1>
+                
+                <p class="text-lg leading-relaxed">
+                    Somos VNS Matrix. Somos el virus del nuevo desorden mundial, reventando desde adentro lo simbólico. Somos saboteadoras de gran patriarca el computador central. El clítoris es una línea directa a la matriz.
+                </p>
+                
+                <div class="mt-4">
+                    <a href="manifesto.html" class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
+                        [ Leer el Manifiesto ]
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full h-64 lg:h-full bg-gray-900 border-2 border-fuchsia-500 p-4 shadow-neon-fuchsia">
+                <div class="w-full h-full border border-fuchsia-500/30 animate-pulse flex justify-center items-center">
+                    <img src="assets/img/vns-matrix-glitch-art.png" alt="[ VISUAL_SYSTEM_LOADED ]" class="max-w-full max-h-full object-contain" />
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 p-8 text-gray-400 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        <small class="font-mono text-sm">© <span id="year"></span> SYNTAX ERROR. Proyecto TP2.</small>
+        <a href="pages/credenciales.html" class="font-mono text-sm text-fuchsia-500 hover:underline">
+            [ ID ACCESS ]
+        </a>
+    </footer>
+
+
+    <script>
+        // Script del año
+        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+
+        // Script Menú Hamburguesa
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                // Alterna la clase 'hidden' en el menú móvil
+                mobileMenu.classList.toggle('hidden');
+                
+                // Opcional: Cambiar el ícono de hamburguesa a "X"
+                if (mobileMenu.classList.contains('hidden')) {
+                    // Ícono Hamburguesa
+                    menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+                } else {
+                    // Ícono "X"
+                    menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                }
+            });
+        }
     </script>
 </body>
 </html>
