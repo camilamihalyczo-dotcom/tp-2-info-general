@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="SYNTAX ERROR - Terminal estilo web. Acceso a manifesto, db-art, log, media protocol y contacto." />
+    <title>SYNTAX ERROR - [HOME]</title>
+    
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+    <main class="window" id="terminal" role="main" aria-label="Terminal principal">
+        <header class="window-header" role="banner">
+            <h1>SYNTAX ERROR - TERMINAL</h1>
+        </header>
+
+        <section class="window-body" role="region" aria-label="Contenido principal">
+            <p class="prompt">C:\VNS_MATRIX\&gt;</p>
+
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="manifesto.html">[ manifest.exe ]</a></li>
+                    <li><a href="db-art.html">[ db-art.exe ]</a></li>
+                    <li><a href="log-exhibits.html">[ log.exe ]</a></li>
+                    <li><a href="media-protocol.html">[ comms.exe ]</a></li>
+                    <li><a href="pages/contact.html">[ contact.exe ]</a></li>
+                    <li><a href="pages/credenciales.html">[ id-access.exe ]</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <footer class="window-footer" role="contentinfo">
+            <small>© <span id="year"></span> SYNTAX ERROR</small>
+        </footer>
+    </main>
+
+    <script>
+        // small enhancement: set current year for footer
+        (function(){ document.getElementById('year').textContent = new Date().getFullYear(); })();
+    </script>
+</body>
+</html>

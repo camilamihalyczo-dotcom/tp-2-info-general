@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Galería de obras de VNS Matrix." />
+    <title>SYNTAX ERROR - [SYSTEM LOG]</title>
+    
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+    <main class="window" id="gallery-page" role="main" aria-label="Galería de Obras">
+        <header class="window-header" role="banner">
+            <h1>db-art.exe</h1>
+        </header>
+
+        <section class="window-body" role="region" aria-label="Contenido de la galería">
+            
+            <h2>SYSTEM LOG: OBRAS</h2>
+            <p>Filtrar por: [ _CODE ] [ _IMAGE ] [ _INSTALL ]</p>
+            
+            <div>
+                <a href="pages/log-detail.html">
+                    <img src="placeholder.png" alt="Miniatura de All New Gen">
+                    <p>All New Gen (1993)</p>
+                </a>
+            </div>
+            
+            <a href="index.html">[ volver a C:\ ]</a>
+            </section>
+
+        <footer class="window-footer" role="contentinfo">
+            <small>© <span id="year"></span> SYNTAX ERROR</small>
+        </footer>
+    </main>
+
+    <script>
+        (function(){ document.getElementById('year').textContent = new Date().getFullYear(); })();
+    </script>
+</body>
+</html>
