@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Acceso a credenciales de alumno." />
+    <title>SYNTAX ERROR - [ID ACCESS]</title>
+    
+    <link rel="stylesheet" href="../style.css" /> 
+    <link rel="icon" type="image/png" href="../favicon.png" />
+</head>
+<body>
+    <main class="window" id="credits-page" role="main" aria-label="Página de Credenciales">
+        <header class="window-header" role="banner">
+            <h1>id-access.exe</h1>
+        </header>
+
+        <section class="window-body" role="region" aria-label="Contenido de credenciales">
+            
+            <form id="login-form">
+                <h2>AUTHENTICATION REQUIRED</h2>
+                <p>Se requiere frase de bypass para acceder al log de desarrollo.</p>
+                
+                <div>
+                    <label for="passphrase">PASSPHRASE:</label>
+                    <input type="password" id="passphrase" name="passphrase" required>
+                </div>
+                
+                <p id="error-message" style="color: #FF00FF; display: none;">[ ACCESS DENIED: FRASE INCORRECTA ]</p>
+                
+                <button type="submit">[ INFILTRAR SISTEMA ]</button>
+            </form>
+
+            <div id="developer-info" style="display:none;">
+                <h2>ID ACCESS GRANTED</h2>
+                <p>Nombre: Camila Mihalyczo</p>
+                <p>Materia: [Nombre de la Materia]</p>
+                <p>Profesora: [Nombre de la Profesora]</p>
+                
+                <h3>FUENTES (Bibliografía)</h3>
+                <ul>
+                    <li>https://vnsmatrix.net/</li>
+                    <li>https://es.wikipedia.org/wiki/VNS_Matrix</li>
+                    <li>https://cyberfeminism-index.com/</li>
+                    </ul>
+            </div>
+            
+            <a href="../index.html" class="back-link">[ volver a C:\ ]</a>
+
+        </section>
+
+        <footer class="window-footer" role="contentinfo">
+            <small>© <span id="year"></span> SYNTAX ERROR</small>
+        </footer>
+    </main>
+
+    <script>
+        (function(){ document.getElementById('year').textContent = new Date().getFullYear(); })();
+    </script>
+    
+    </body>
+</html>

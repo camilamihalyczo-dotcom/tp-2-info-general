@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Formulario de contacto y transmisión." />
+    <title>SYNTAX ERROR - [CONTACT]</title>
+    
+    <link rel="stylesheet" href="../style.css" /> 
+    <link rel="icon" type="image/png" href="../favicon.png" />
+</head>
+<body>
+    <main class="window" id="contact-page" role="main" aria-label="Página de Contacto">
+        <header class="window-header" role="banner">
+            <h1>contact.exe</h1>
+        </header>
+
+        <section class="window-body" role="region" aria-label="Formulario de transmisión">
+            
+            <form id="contact-form">
+                <h2>INICIAR TRANSMISIÓN</h2>
+                <p>Suscribite al virus o enviá tu mensaje a la matriz.</p>
+                
+                <div>
+                    <label for="email">TU_EMAIL:</label>
+                    <input type="email" id="email" name="email" required>
+                    <p class="error-msg" id="email-error" style="display:none;">[ FORMATO DE EMAIL INVÁLIDO ]</p>
+                </div>
+                
+                <div>
+                    <label for="message">MESSAGE:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <p class="error-msg" id="msg-error" style="display:none;">[ MENSAJE REQUERIDO ]</p>
+                </div>
+                
+                <button type="submit">[ ENVIAR TRANSMISIÓN ]</button>
+                
+                <p id="success-message" style="display:none;">[ TRANSMISIÓN RECIBIDA... ]</p>
+            </form>
+            
+            <a href="../index.html" class="back-link">[ volver a C:\ ]</a>
+
+        </section>
+
+        <footer class="window-footer" role="contentinfo">
+            <small>© <span id="year"></span> SYNTAX ERROR</small>
+        </footer>
+    </main>
+
+    <script>
+        (function(){ document.getElementById('year').textContent = new Date().getFullYear(); })();
+    </script>
+    </body>
+</html>
