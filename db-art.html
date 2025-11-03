@@ -2,41 +2,199 @@
 <html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Galería de obras de VNS Matrix." />
-    <title>SYNTAX ERROR - [SYSTEM LOG]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Galería de obras y proyectos ciberfeministas de VNS Matrix." />
+    <title>SYNTAX ERROR - [GALERÍA]</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css" /> 
     <link rel="icon" type="image/png" href="favicon.png" />
-</head>
-<body>
-    <main class="window" id="gallery-page" role="main" aria-label="Galería de Obras">
-        <header class="window-header" role="banner">
-            <h1>db-art.exe</h1>
-        </header>
-
-        <section class="window-body" role="region" aria-label="Contenido de la galería">
-            
-            <h2>SYSTEM LOG: OBRAS</h2>
-            <p>Filtrar por: [ _CODE ] [ _IMAGE ] [ _INSTALL ]</p>
-            
-            <div>
-                <a href="pages/log-detail.html">
-                    <img src="placeholder.png" alt="Miniatura de All New Gen">
-                    <p>All New Gen (1993)</p>
-                </a>
-            </div>
-            
-            <a href="index.html">[ volver a C:\ ]</a>
-            </section>
-
-        <footer class="window-footer" role="contentinfo">
-            <small>© <span id="year"></span> SYNTAX ERROR</small>
-        </footer>
-    </main>
 
     <script>
-        (function(){ document.getElementById('year').textContent = new Date().getFullYear(); })();
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'neon-fuchsia': {
+                '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
+              },
+              'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
+            },
+            fontFamily: {
+              'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
+            },
+            boxShadow: {
+              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+            }
+          }
+        }
+      }
     </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .filter-btn.active {
+        background-color: #d946ef; /* neon-fuchsia-500 */
+        color: #000;
+        box-shadow: 0 0 15px #d946ef;
+      }
+    </style>
+
+</head>
+
+<body class="bg-black text-gray-300 font-mono pt-20">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+        
+        <a href="index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
+            SYNTAX ERROR
+        </a>
+
+        <nav class="hidden md:flex gap-4">
+            <a href="manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
+            <a href="db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="pages/contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+        </nav>
+
+        <button id="menu-btn" class="md:hidden z-50">
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </header>
+
+    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifesto</a>
+        <a href="db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
+        <a href="log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
+        <a href="media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="pages/contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
+    </div>
+
+<main class="container mx-auto px-4 py-12">
+        
+    <p class="text-fuchsia-500 text-lg">[ LEYENDO ARCHIVO... /db-art.exe ]</p>
+            
+    <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
+        Hackeando el Código
+    </h1>
+    <p class="text-lg leading-relaxed max-w-3xl mb-8">
+        La práctica de VNS Matrix fue transmedia. Sus obras no eran solo para mirar, sino para infiltrarse. Haz clic en una obra para ver los detalles.
+    </p>
+
+    <div id="gallery-filters" class="flex flex-col md:flex-row gap-2 my-8">
+        <button class="filter-btn active font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="all">
+            [ MOSTRAR TODO ]
+        </button>
+        <button class="filter-btn font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="code">
+            [ FILTRAR: CODE ]
+        </button>
+        <button class="filter-btn font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="image">
+            [ FILTRAR: IMAGE ]
+        </button>
+        <button class="filter-btn font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="install">
+            [ FILTRAR: INSTALL ]
+        </button>
+    </div>
+
+    <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="gallery-item" data-category="code">
+            <a href="pages/log-detail.html?work=manifesto-1991" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                <img src="assets/img/gallery/work-manifesto.png" alt="A Cyberfeminist Manifesto for the 21st Century" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
+                <div class="p-4">
+                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">A Cyberfeminist Manifesto (1991)</h3>
+                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Valla publicitaria, póster, texto digital.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item" data-category="install">
+            <a href="pages/log-detail.html?work=all-new-gen" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                <img src="assets/img/gallery/work-all-new-gen.png" alt="All New Gen" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
+                <div class="p-4">
+                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">All New Gen (1993-1995)</h3>
+                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Videojuego interactivo (CD-ROM) e instalación.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item" data-category="image">
+            <a href="pages/log-detail.html?work=dna-sluts" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                <img src="assets/img/gallery/work-dna-sluts.png" alt="Las DNA Sluts" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
+                <div class="p-4">
+                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Las "DNA Sluts" (1993)</h3>
+                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Personajes de videojuego / Light Boxes.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item" data-category="image">
+            <a href="pages/log-detail.html?work=infiltrate" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                <img src="assets/img/gallery/work-infiltrate.png" alt="INFILTRATE" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
+                <div class="p-4">
+                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">INFILTRATE (1994)</h3>
+                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Lightbox (caja de luz).</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item" data-category="code">
+            <a href="pages/log-detail.html?work=bitch-mutant" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                <img src="assets/img/gallery/work-bitch-mutant.png" alt="Bitch Mutant Manifesto" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
+                <div class="p-4">
+                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Bitch Mutant Manifesto (1996)</h3>
+                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Texto digital / Obra sonora.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="gallery-item" data-category="install">
+            <a href="pages/log-detail.html?work=bad-code" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                <img src="assets/img/gallery/work-bad-code.png" alt="Bad Code" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
+                <div class="p-4">
+                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Bad Code (1996-1999)</h3>
+                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: CD-ROM / Proyecto multimedia.</p>
+                </div>
+            </a>
+        </div>
+
+    </div> 
+</main>
+
+    <footer class="bg-gray-900 p-8 text-gray-400 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        <small class="font-mono text-sm">© <span id="year"></span> SYNTAX ERROR. Proyecto TP2.</small>
+        <a href="pages/credenciales.html" class="font-mono text-sm text-fuchsia-500 hover:underline">
+            [ ID ACCESS ]
+        </a>
+    </footer>
+
+    <script>
+        // Script del año
+        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+
+        // Script Menú Hamburguesa
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+                } else {
+                    menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+                }
+            });
+        }
+    </script>
+    
+    <script src="assets/js/gallery.js"></script>
+
 </body>
 </html>

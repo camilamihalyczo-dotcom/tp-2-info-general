@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Formulario de contacto y transmisión." />
-    <title>SYNTAX ERROR - [CONTACT]</title>
+    <meta name="description" content="Archivero del sistema: descargas y recursos." />
+    <title>SYNTAX ERROR - [ARCHIVER]</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,38 +70,44 @@
 
     <main class="container mx-auto px-4 py-12">
         
-        <div class="max-w-2xl mx-auto">
-            <p class="text-fuchsia-500 text-lg">[ EJECUTANDO... /pages/contact.exe ]</p>
-                
+        <div class="max-w-4xl mx-auto">
+            <p class="text-fuchsia-500 text-lg">[ EJECUTANDO... /pages/archiver.exe ]</p>
+            
             <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
-                Iniciar Transmisión
+                Archivero del Sistema
             </h1>
             <p class="text-lg leading-relaxed max-w-3xl mb-10">
-                Suscribite al virus o enviá tu mensaje a la matriz.
+                Recursos del sistema, archivos descargables y logs de investigación.
             </p>
-            
-            <form id="contact-form" class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-6 md:p-8" novalidate>
-                
-                <div class="mb-4">
-                    <label for="email" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">TU_EMAIL:</label>
-                    <input type="email" id="email" name="email" required
-                           class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg">
-                    <p class="text-neon-lime text-sm mt-2 hidden" id="email-error">[ FORMATO DE EMAIL INVÁLIDO ]</p>
-                </div>
-                
-                <div class="mb-6">
-                    <label for="message" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">MESSAGE:</label>
-                    <textarea id="message" name="message" rows="5" required
-                              class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg"></textarea>
-                    <p class="text-neon-lime text-sm mt-2 hidden" id="msg-error">[ MENSAJE REQUERIDO ]</p>
-                </div>
-                
-                <button type="submit" class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
-                    [ Enviar Transmisión ]
-                </button>
 
-                <p class="text-neon-lime text-lg mt-4 hidden" id="success-message">[ TRANSMISIÓN RECIBIDA... ]</p>
-            </form>
+            <section class="mb-10">
+                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS LOCALES ]</h2>
+                
+                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+                    <div>
+                        <h3 class="font-sans uppercase font-bold text-xl text-gray-100">PDF_Investigacion_TP2.zip</h3>
+                        <p class="text-sm text-gray-400">Contiene los PDF de Investigación de Contenido y Estrategia.</p>
+                    </div>
+                    <a href="assets/docs/TP2-CamilaMihalyczo.zip" download
+                       class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia flex-shrink-0">
+                        [ Descargar ]
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS EXTERNOS / LECTURAS ]</h2>
+
+                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed">
+                    <ul class="list-disc list-inside flex flex-col gap-3">
+                        <li><span class="text-gray-400">Archivo Oficial VNS Matrix:</span> <a href="https://vnsmatrix.net/" target="_blank" class="text-fuchsia-400 hover:underline">vnsmatrix.net</a></li>
+                        <li><span class="text-gray-400">Índice de Ciberfeminismo:</span> <a href="https://cyberfeminism-index.com/" target="_blank" class="text-fuchsia-400 hover:underline">cyberfeminism-index.com</a></li>
+                        <li><span class="text-gray-400">Wikipedia (Español):</span> <a href="https://es.wikipedia.org/wiki/VNS_Matrix" target="_blank" class="text-fuchsia-400 hover:underline">es.wikipedia.org/wiki/VNS_Matrix</a></li>
+                        <li><span class="text-gray-400">Manifiesto (Fuente Primaria):</span> <a href="http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix" target="_blank" class="text-fuchsia-400 hover:underline">dpya.org</a></li>
+                        <li><span class="text-gray-400">Archivo de Artistas AWARE:</span> <a href="https://awarewomenartists.com/en/artiste/vns-matrix/" target="_blank" class="text-fuchsia-400 hover:underline">awarewomenartists.com</a></li>
+                    </ul>
+                </div>
+            </section>
 
         </div>
     </main>
@@ -132,7 +138,5 @@
             });
         }
     </script>
-    
-    <script src="../assets/js/validation-contact.js"></script>
 </body>
 </html>

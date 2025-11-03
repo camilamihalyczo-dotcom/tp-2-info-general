@@ -71,44 +71,44 @@
     </header>
 
     <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
-        <a href="manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifesto</a>
+        <a href="manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
         <a href="db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
         <a href="log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
         <a href="media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
         <a href="pages/contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
+<main class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto flex flex-col items-center">
+        <p class="text-fuchsia-500 text-lg mb-4">[ EJECUTANDO... /index.exe ]</p>
+        
+        <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg text-center mb-8">
+            BIENVENIDES AL CYBERFEMINISMO
+        </h1>
 
-    <main class="container mx-auto px-4 py-12">
+        <div class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-4 md:p-6 mb-10 w-full max-w-3xl">
+            <img id="main-hero-image" 
+                 src="assets/img/vns-matrix-glitch-art.png" 
+                 alt="VNS Matrix Glitch Art" 
+                 class="w-full object-cover transition-opacity duration-300"
+                 onmouseover="this.src='assets/img/vns-matrix-glitch-alt.png'"
+                 onmouseout="this.src='assets/img/vns-matrix-glitch-art.png'">
+        </div>
+        
+        <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-4 max-w-2xl text-center">
+            <p class="text-neon-lime">"We are the modern cunt."</p>
+            <p class="text-gray-300">
+                SYNTAX ERROR te invita a hackear la matriz. Somos el virus del nuevo desorden mundial.
+                Creemos en la información como arma, en la identidad como construcción,
+                y en la subversión como única vía para la libertad en la red.
+            </p>
+            <p class="text-gray-300">
+                Infiltrate, cuestiona, redefine. El código es tu arma.
+            </p>
+        </div>
 
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            <div class="flex flex-col gap-4">
-                <p class="text-fuchsia-500 text-lg">[ TRANSMISIÓN INICIAL... ]</p>
-                
-                <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg">
-                    EL VIRUS DEL NUEVO DESORDEN MUNDIAL
-                </h1>
-                
-                <p class="text-lg leading-relaxed">
-                    Somos VNS Matrix. Somos el virus del nuevo desorden mundial, reventando desde adentro lo simbólico. Somos saboteadoras de gran patriarca el computador central. El clítoris es una línea directa a la matriz.
-                </p>
-                
-                <div class="mt-4">
-                    <a href="manifesto.html" class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
-                        [ Leer el Manifiesto ]
-                    </a>
-                </div>
-            </div>
-
-            <div class="w-full h-64 lg:h-full bg-gray-900 border-2 border-fuchsia-500 p-4 shadow-neon-fuchsia">
-                <div class="w-full h-full border border-fuchsia-500/30 animate-pulse flex justify-center items-center">
-                    <img src="assets/img/vns-matrix-glitch-art.png" alt="[ VISUAL_SYSTEM_LOADED ]" class="max-w-full max-h-full object-contain" />
-                </div>
-            </div>
-
-        </section>
-    </main>
+    </div>
+</main>
 
     <footer class="bg-gray-900 p-8 text-gray-400 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <small class="font-mono text-sm">© <span id="year"></span> SYNTAX ERROR. Proyecto TP2.</small>
