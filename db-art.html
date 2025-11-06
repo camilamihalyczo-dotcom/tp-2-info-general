@@ -10,9 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-
-    <script>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" /> <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -34,14 +32,6 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      .filter-btn.active {
-        background-color: #d946ef; /* neon-fuchsia-500 */
-        color: #000;
-        box-shadow: 0 0 15px #d946ef;
-      }
-    </style>
 
 </head>
 
@@ -76,96 +66,80 @@
         <a href="pages/contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
-<main class="container mx-auto px-4 py-12">
+    <main class="container mx-auto px-4 py-12">
         
-    <p class="text-fuchsia-500 text-lg">[ LEYENDO ARCHIVO... /db-art.exe ]</p>
-            
-    <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
-        Hackeando el Código
-    </h1>
-    <p class="text-lg leading-relaxed max-w-3xl mb-8">
-        La práctica de VNS Matrix fue transmedia. Sus obras no eran solo para mirar, sino para infiltrarse. Haz clic en una obra para ver los detalles.
-    </p>
+        <p class="text-fuchsia-500 text-lg">[ LEYENDO ARCHIVO... /db-art.exe ]</p>
+                
+        <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
+            Hackeando el Código
+        </h1>
+        <p class="text-lg leading-relaxed max-w-3xl mb-8">
+            La práctica de VNS Matrix fue transmedia. Sus obras no eran solo para mirar, sino para infiltrarse. Haz clic en una obra para ver los detalles.
+        </p>
 
-    <div id="gallery-filters" class="flex flex-col md:flex-row gap-2 my-8">
-        <button class="filter-btn active font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="all">
-            [ MOSTRAR TODO ]
-        </button>
-        <button class="filter-btn font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="code">
-            [ FILTRAR: CODE ]
-        </button>
-        <button class="filter-btn font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="image">
-            [ FILTRAR: IMAGE ]
-        </button>
-        <button class="filter-btn font-sans uppercase p-2 border border-fuchsia-500 hover:bg-fuchsia-600 hover:text-black transition-all" data-filter="install">
-            [ FILTRAR: INSTALL ]
-        </button>
-    </div>
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
+                <a href="pages/log-detail.html?work=manifesto-1991" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                    <img src="assets/img/gallery/work-manifesto.png" alt="A Cyberfeminist Manifesto for the 21st Century" class="w-full h-48 object-contain bg-black border-b-2 border-fuchsia-500">
+                    <div class="p-4">
+                        <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">A Cyberfeminist Manifesto (1991)</h3>
+                        <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Valla publicitaria, póster, texto digital.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="gallery-item" data-category="code">
-            <a href="pages/log-detail.html?work=manifesto-1991" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
-                <img src="assets/img/gallery/work-manifesto.png" alt="A Cyberfeminist Manifesto for the 21st Century" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
-                <div class="p-4">
-                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">A Cyberfeminist Manifesto (1991)</h3>
-                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Valla publicitaria, póster, texto digital.</p>
-                </div>
-            </a>
-        </div>
+            <div>
+                <a href="pages/log-detail.html?work=all-new-gen" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                    <img src="assets/img/gallery/work-all-new-gen.png" alt="All New Gen" class="w-full h-48 object-contain bg-black border-b-2 border-fuchsia-500">
+                    <div class="p-4">
+                        <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">All New Gen (1993-1995)</h3>
+                        <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Videojuego interactivo (CD-ROM) e instalación.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="gallery-item" data-category="install">
-            <a href="pages/log-detail.html?work=all-new-gen" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
-                <img src="assets/img/gallery/work-all-new-gen.png" alt="All New Gen" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
-                <div class="p-4">
-                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">All New Gen (1993-1995)</h3>
-                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Videojuego interactivo (CD-ROM) e instalación.</p>
-                </div>
-            </a>
-        </div>
+            <div>
+                <a href="pages/log-detail.html?work=dna-sluts" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                    <img src="assets/img/gallery/work-dna-sluts.png" alt="Las DNA Sluts" class="w-full h-48 object-contain bg-black border-b-2 border-fuchsia-500">
+                    <div class="p-4">
+                        <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Las "DNA Sluts" (1993)</h3>
+                        <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Personajes de videojuego / Light Boxes.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="gallery-item" data-category="image">
-            <a href="pages/log-detail.html?work=dna-sluts" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
-                <img src="assets/img/gallery/work-dna-sluts.png" alt="Las DNA Sluts" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
-                <div class="p-4">
-                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Las "DNA Sluts" (1993)</h3>
-                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Personajes de videojuego / Light Boxes.</p>
-                </div>
-            </a>
-        </div>
+            <div>
+                <a href="pages/log-detail.html?work=infiltrate" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                    <img src="assets/img/gallery/work-infiltrate.png" alt="INFILTRATE" class="w-full h-48 object-contain bg-black border-b-2 border-fuchsia-500">
+                    <div class="p-4">
+                        <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">INFILTRATE (1994)</h3>
+                        <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Lightbox (caja de luz).</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="gallery-item" data-category="image">
-            <a href="pages/log-detail.html?work=infiltrate" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
-                <img src="assets/img/gallery/work-infiltrate.png" alt="INFILTRATE" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
-                <div class="p-4">
-                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">INFILTRATE (1994)</h3>
-                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Lightbox (caja de luz).</p>
-                </div>
-            </a>
-        </div>
+            <div>
+                <a href="pages/log-detail.html?work=bitch-mutant" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                    <img src="assets/img/gallery/work-bitch-mutant.png" alt="Bitch Mutant Manifesto" class="w-full h-48 object-contain bg-black border-b-2 border-fuchsia-500">
+                    <div class="p-4">
+                        <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Bitch Mutant Manifesto (1996)</h3>
+                        <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Texto digital / Obra sonora.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="gallery-item" data-category="code">
-            <a href="pages/log-detail.html?work=bitch-mutant" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
-                <img src="assets/img/gallery/work-bitch-mutant.png" alt="Bitch Mutant Manifesto" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
-                <div class="p-4">
-                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Bitch Mutant Manifesto (1996)</h3>
-                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: Texto digital / Obra sonora.</p>
-                </div>
-            </a>
-        </div>
+            <div>
+                <a href="pages/log-detail.html?work=bad-code" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
+                    <img src="assets/img/gallery/work-bad-code.png" alt="Bad Code" class="w-full h-48 object-contain bg-black border-b-2 border-fuchsia-500">
+                    <div class="p-4">
+                        <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Bad Code (1996-1999)</h3>
+                        <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: CD-ROM / Proyecto multimedia.</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="gallery-item" data-category="install">
-            <a href="pages/log-detail.html?work=bad-code" class="block bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia group transition-all hover:scale-[1.02]">
-                <img src="assets/img/gallery/work-bad-code.png" alt="Bad Code" class="w-full h-48 object-cover border-b-2 border-fuchsia-500">
-                <div class="p-4">
-                    <h3 class="font-sans uppercase font-bold text-2xl text-gray-100 group-hover:text-fuchsia-400">Bad Code (1996-1999)</h3>
-                    <p class="font-mono text-sm text-fuchsia-400 mb-2">Formato: CD-ROM / Proyecto multimedia.</p>
-                </div>
-            </a>
-        </div>
-
-    </div> 
-</main>
+        </div> </main>
 
     <footer class="bg-gray-900 p-8 text-gray-400 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <small class="font-mono text-sm">© <span id="year"></span> SYNTAX ERROR. Proyecto TP2.</small>
@@ -194,7 +168,5 @@
         }
     </script>
     
-    <script src="assets/js/gallery.js"></script>
-
-</body>
+    </body>
 </html>
