@@ -80,8 +80,22 @@
                 Suscribite al virus o enviá tu mensaje a la matriz.
             </p>
             
-            <form id="contact-form" class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-6 md:p-8" novalidate>
+            <form id="contact-form" 
+                  class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-6 md:p-8" 
+                  method="POST" 
+                  action="https://api.web3forms.com/submit"
+                  novalidate>
                 
+                <input type="hidden" name="access_key" value="24d89b82-0b14-4fd3-8f52-3a68ff761f78">
+                <input type="hidden" name="subject" value="Nueva Transmisión desde SYNTAX ERROR">
+                
+                <div class="mb-4">
+                    <label for="callsign" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">CALLSIGN (Alias):</label>
+                    <input type="text" id="callsign" name="callsign" required minlength="2"
+                           class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg">
+                    <p class="text-neon-lime text-sm mt-2 hidden" id="callsign-error">[ CALLSIGN REQUERIDO (MIN. 2 CARACTERES) ]</p>
+                </div>
+
                 <div class="mb-4">
                     <label for="email" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">TU_EMAIL:</label>
                     <input type="email" id="email" name="email" required
@@ -89,13 +103,39 @@
                     <p class="text-neon-lime text-sm mt-2 hidden" id="email-error">[ FORMATO DE EMAIL INVÁLIDO ]</p>
                 </div>
                 
+                <div class="mb-4">
+                    <label for="dob" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">FECHA DE NACIMIENTO:</label>
+                    <input type="text" id="dob" name="dob" required placeholder="DD/MM/YYYY"
+                           class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg">
+                    <p class="text-neon-lime text-sm mt-2 hidden" id="dob-error">[ FORMATO DE FECHA INVÁLIDO (DD/MM/YYYY) ]</p>
+                </div>
+
+                <div class="mb-4">
+                    <label for="priority" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">NIVEL DE PRIORIDAD:</label>
+                    <select id="priority" name="priority" required
+                            class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg">
+                        <option value="" disabled selected>-- SELECCIONAR NIVEL --</option>
+                        <option value="baja">Baja (Info General)</option>
+                        <option value="media">Media (Consulta)</option>
+                        <option value="alta">Alta (Virus Detectado)</option>
+                    </select>
+                    <p class="text-neon-lime text-sm mt-2 hidden" id="priority-error">[ NIVEL DE PRIORIDAD REQUERIDO ]</p>
+                </div>
+
                 <div class="mb-6">
                     <label for="message" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">MESSAGE:</label>
-                    <textarea id="message" name="message" rows="5" required
+                    <textarea id="message" name="message" rows="5" required minlength="10"
                               class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg"></textarea>
-                    <p class="text-neon-lime text-sm mt-2 hidden" id="msg-error">[ MENSAJE REQUERIDO ]</p>
+                    <p class="text-neon-lime text-sm mt-2 hidden" id="msg-error">[ MENSAJE REQUERIDO (MIN. 10 CARACTERES) ]</p>
                 </div>
                 
+                <div class="mb-6">
+                    <input type="checkbox" id="terms" name="terms" required
+                           class="w-4 h-4 bg-gray-800 border-fuchsia-500 text-fuchsia-600 focus:ring-fuchsia-500">
+                    <label for="terms" class="ml-2 text-gray-300 text-base">Acepto los términos y corro el riesgo de que mi red sea corrompida.</label>
+                    <p class="text-neon-lime text-sm mt-2 hidden" id="terms-error">[ DEBES ACEPTAR LOS TÉRMINOS ]</p>
+                </div>
+
                 <button type="submit" class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
                     [ Enviar Transmisión ]
                 </button>
