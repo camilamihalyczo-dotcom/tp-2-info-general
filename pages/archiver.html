@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap"
         rel="stylesheet">
+    
+
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -34,7 +36,6 @@
             }
         }
     </script>
-
 
 </head>
 
@@ -89,7 +90,7 @@
                 Archivero del Sistema
             </h1>
             <p class="text-lg leading-relaxed max-w-3xl mb-10">
-                Recursos del sistema, archivos descargables y logs de investigación.
+                Recursos del sistema, archivos descargables y blogs de investigación.
             </p>
 
             <section class="mb-10">
@@ -110,27 +111,40 @@
             </section>
 
             <section>
-                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS EXTERNOS / LECTURAS
-                    ]</h2>
+                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS EXTERNOS / LECTURAS ]</h2>
 
-                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed">
-                    <ul class="list-disc list-inside flex flex-col gap-3">
-                        <li><span class="text-gray-400">Archivo Oficial VNS Matrix:</span> <a
-                                href="https://vnsmatrix.net/" target="_blank"
-                                class="text-fuchsia-400 hover:underline">vnsmatrix.net</a></li>
-                        <li><span class="text-gray-400">Índice de Ciberfeminismo:</span> <a
-                                href="https://cyberfeminism-index.com/" target="_blank"
-                                class="text-fuchsia-400 hover:underline">cyberfeminism-index.com</a></li>
-                        <li><span class="text-gray-400">Wikipedia (Español):</span> <a
-                                href="https://es.wikipedia.org/wiki/VNS_Matrix" target="_blank"
-                                class="text-fuchsia-400 hover:underline">es.wikipedia.org/wiki/VNS_Matrix</a></li>
-                        <li><span class="text-gray-400">Manifiesto (Fuente Primaria):</span> <a
-                                href="http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix"
-                                target="_blank" class="text-fuchsia-400 hover:underline">dpya.org</a></li>
-                        <li><span class="text-gray-400">Archivo de Artistas AWARE:</span> <a
-                                href="https://awarewomenartists.com/en/artiste/vns-matrix/" target="_blank"
-                                class="text-fuchsia-400 hover:underline">awarewomenartists.com</a></li>
-                    </ul>
+                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 flex flex-col gap-4 text-lg">
+
+                    <a href="https://vnsmatrix.net/" target="_blank"
+                        class="flex flex-col md:flex-row justify-between md:items-center text-gray-400 hover:text-fuchsia-400 transition-colors duration-200">
+                        <span class="text-gray-100">Archivo Oficial VNS Matrix</span>
+                        <span class="text-sm font-sans uppercase text-fuchsia-500 md:text-gray-400">[ vnsmatrix.net ]</span>
+                    </a>
+
+                    <a href="https://cyberfeminism-index.com/" target="_blank"
+                        class="flex flex-col md:flex-row justify-between md:items-center text-gray-400 hover:text-fuchsia-400 transition-colors duration-200 border-t border-gray-700/50 pt-3">
+                        <span class="text-gray-100">Índice de Ciberfeminismo</span>
+                        <span class="text-sm font-sans uppercase text-fuchsia-500 md:text-gray-400">[ cyberfeminism-index.com ]</span>
+                    </a>
+
+                    <a href="https://es.wikipedia.org/wiki/VNS_Matrix" target="_blank"
+                        class="flex flex-col md:flex-row justify-between md:items-center text-gray-400 hover:text-fuchsia-400 transition-colors duration-200 border-t border-gray-700/50 pt-3">
+                        <span class="text-gray-100">Wikipedia (Español)</span>
+                        <span class="text-sm font-sans uppercase text-fuchsia-500 md:text-gray-400">[ es.wikipedia.org ]</span>
+                    </a>
+
+                    <a href="http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix"
+                        target="_blank"
+                        class="flex flex-col md:flex-row justify-between md:items-center text-gray-400 hover:text-fuchsia-400 transition-colors duration-200 border-t border-gray-700/50 pt-3">
+                        <span class="text-gray-100">Manifiesto (Fuente Primaria)</span>
+                        <span class="text-sm font-sans uppercase text-fuchsia-500 md:text-gray-400">[ dpya.org ]</span>
+                    </a>
+
+                    <a href="https://awarewomenartists.com/en/artiste/vns-matrix/" target="_blank"
+                        class="flex flex-col md:flex-row justify-between md:items-center text-gray-400 hover:text-fuchsia-400 transition-colors duration-200 border-t border-gray-700/50 pt-3">
+                        <span class="text-gray-100">Archivo de Artistas AWARE</span>
+                        <span class="text-sm font-sans uppercase text-fuchsia-500 md:text-gray-400">[ awarewomenartists.com ]</span>
+                    </a>
                 </div>
             </section>
 
@@ -145,8 +159,8 @@
     </footer>
 
     <script>
-            // Script del año
-            (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+        // Script del año
+        (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
 
         // Script Menú Hamburguesa
         const menuBtn = document.getElementById('menu-btn');
