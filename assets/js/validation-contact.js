@@ -1,7 +1,7 @@
 // Espera a que todo el HTML esté cargado antes de ejecutar el script
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Seleccionamos todos los elementos que necesitamos
+    // 1. Selecciona todos los elementos necesarios
     const contactForm = document.getElementById('contact-form');
     
     // Inputs
@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Botón de envío
     const submitButton = contactForm.querySelector('button[type="submit"]');
 
-    // 2. Definimos las RegEx
+    // 2. RegEx
     const emailRegex = /^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/;
     const dobRegex = /^(((0[1-9]|[12][0-9]|3[01])[- /.](0[13578]|1[02])|(0[1-9]|[12][0-9]|30)[- /.](0[469]|11)|(0[1-9]|1\d|2[0-8])[- /.]02)[- /.]\d{4}|29[- /.]02[- /.](\d{2}(0[48]|[2468][048]|[13579][26])|([02468][048]|[1359][26])00))$/;
 
-    // 3. Creamos la función principal de validación
+    // 3. Función principal de validación
     const validateForm = () => {
-        let isValid = true; // Empezamos asumiendo que el formulario es válido
+        let isValid = true; // Asumiendo que el formulario es válido
         
-        // Ocultamos todos los mensajes de error al empezar
+        // Oculta todos los mensajes de error al empezar
         callsignError.classList.add('hidden');
         emailError.classList.add('hidden');
         dobError.classList.add('hidden');
@@ -82,32 +82,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- FIN DE VALIDACIONES ---
 
-        return isValid; // Devolvemos true o false
+        return isValid; // true o false
     };
 
-    // 4. Agregamos el "oyente" al evento 'submit' del formulario
+    // 4. Evento 'submit' del formulario
     contactForm.addEventListener('submit', (event) => {
         
-        event.preventDefault(); // Prevenimos que la página se recargue
+        event.preventDefault(); // Para que que la página no se recargue
         
         if (validateForm()) {
             // Si el formulario es válido...
             
-            // Cambiamos el texto del botón para dar feedback
+            // Cambia el texto del botón
             submitButton.innerText = "[ ENVIANDO... ]";
-            submitButton.disabled = true; // Deshabilitamos el botón
+            submitButton.disabled = true; // Deshabilita el botón
 
-            // 1. Creamos un objeto FormData con los datos del formulario
+            // 1. Objeto FormData con los datos del formulario
             const formData = new FormData(contactForm);
             
-            // 2. Convertimos los datos a un objeto JSON
+            // 2. Datos a un objeto JSON
             const object = {};
             formData.forEach((value, key) => {
                 object[key] = value;
             });
             const json = JSON.stringify(object);
 
-            // 3. Usamos fetch para enviar el JSON a Web3Forms
+            // 3. Usa fetch para enviar el JSON a Web3Forms
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(async (response) => {
                 let jsonResponse = await response.json();
                 if (response.status == 200) {
-                    // ¡ÉXITO!
+                   // Éxito
                     successMessage.classList.remove('hidden');
                     contactForm.reset(); // Limpia el formulario
                 } else {
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(error => {
-                // Hubo un error de red (ej. sin internet)
+                // Hubo un error de red u otro
                 console.log(error);
                 alert("Error al enviar la transmisión. Intente de nuevo.");
             })
