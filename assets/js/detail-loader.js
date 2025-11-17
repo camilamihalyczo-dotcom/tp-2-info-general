@@ -1,4 +1,4 @@
-// --- Base de Datos de Obras (con descripciones y arrays de imágenes) ---
+// --- Base de Datos de Obras ---
 const worksDatabase = {
     
     'manifesto-1991': {
@@ -53,7 +53,6 @@ const worksDatabase = {
         title: "Bitch Mutant Manifesto (1996)",
         format: "Texto digital / Obra sonora.",
         description: "Una continuación de su primer manifiesto. Este texto es aún más poético y caótico, describiendo a la red como 'la hija salvaje mutante y bastarda del gran papá mainframe'. Refuerza la identidad de VNS Matrix como agentes del 'accidente maligno que cayó en tu sistema mientras dormías'.",
-        // Esta obra usa el video de YouTube
         youtubeEmbed: '<iframe width="511" height="383" src="https://www.youtube.com/embed/bOXS6BVbFCg" title="Bitch Mutant Manifesto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     },
 
@@ -71,7 +70,7 @@ const worksDatabase = {
 };
 
 
-// --- Lógica del Cargador de Contenido ---
+// --- Lógica del Cargador de Contenido (ACTUALIZADA PARA SWIPER) ---
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Obtener el parámetro de la URL
@@ -85,15 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const descriptionEl = document.getElementById('detail-description');
     
     // --- Selectores para Slider Y Video ---
-    const sliderWrapper = document.getElementById('slider-wrapper'); // Contenedor del slider
-    const sliderImage = document.getElementById('slider-image');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const counterEl = document.getElementById('slider-counter');
+    const sliderWrapper = document.querySelector('.swiper'); // Contenedor del slider
+    const slidesContainer = document.getElementById('swiper-wrapper'); // Contenedor de slides
     const videoWrapper = document.getElementById('video-wrapper'); // Contenedor del video
 
-    if (workKey && worksDatabase[workKey]) {
-        // 3. Si encuentra la obra...
+    if (workKey && worksDatabase[workKey] && (slidesContainer || videoWrapper)) {
+        // 3. Si encontramos la obra...
         const workData = worksDatabase[workKey];
 
         // 4. "Rellenar" la info de texto (esto es igual para ambas)
@@ -106,57 +102,51 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- LÓGICA DE VISIBILIDAD ---
         if (workData.youtubeEmbed) {
             // ----- ES UN VIDEO -----
-            
-            // Oculta el slider
-            sliderWrapper.style.display = 'none';
-            
-            // Mostramos el wrapper del video
-            videoWrapper.classList.remove('hidden');
-            
-            // Iframe y con clases de Tailwind
+            sliderWrapper.style.display = 'none'; // Ocultamos el slider
+            videoWrapper.classList.remove('hidden'); // Mostramos el video
             videoWrapper.innerHTML = workData.youtubeEmbed;
             const iframe = videoWrapper.querySelector('iframe');
             if (iframe) {
-                iframe.className = 'w-full h-full'; // Que ocupe todo el div
+                iframe.className = 'w-full h-full';
             }
 
         } else if (workData.images) {
             // ----- ES UN SLIDER DE IMÁGENES -----
+            videoWrapper.style.display = 'none'; // Ocultamos el video
+            sliderWrapper.classList.remove('hidden'); // Mostramos el slider
             
-            // Oculta el video
-            videoWrapper.style.display = 'none';
-
-            // Muestra el slider
-            sliderWrapper.classList.remove('hidden');
-            
-            // --- LÓGICA DEL SLIDER SIMPLE ---
-            let currentImageIndex = 0;
-            const images = workData.images;
-            const totalImages = images.length;
-
-            function showImage(index) {
-                sliderImage.src = images[index].src;
-                sliderImage.alt = images[index].alt;
-                counterEl.innerText = `${index + 1} / ${totalImages}`;
-            }
-
-            nextBtn.addEventListener('click', () => {
-                currentImageIndex++;
-                if (currentImageIndex >= totalImages) {
-                    currentImageIndex = 0;
-                }
-                showImage(currentImageIndex);
+            // 5. "Rellenar" el slider de Swiper
+            let slidesHTML = ''; 
+            workData.images.forEach(image => {
+                slidesHTML += `
+                    <div class="swiper-slide bg-black">
+                        <img src="${image.src}" alt="${image.alt}" class="w-full h-full object-contain">
+                    </div>
+                `;
             });
+            slidesContainer.innerHTML = slidesHTML; // Inyectamos el HTML
 
-            prevBtn.addEventListener('click', () => {
-                currentImageIndex--;
-                if (currentImageIndex < 0) {
-                    currentImageIndex = totalImages - 1;
-                }
-                showImage(currentImageIndex);
+            // 6. "Encender" Swiper.js
+            const swiper = new Swiper('.swiper', {
+                // Opciones
+                loop: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                
+                // Paginación (puntitos)
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+
+                // Flechas de Navegación
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
             });
-
-            showImage(0); // Cargar la primera imagen
         }
 
     } else {
