@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,107 +9,119 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
-    
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            // Paleta de colores "SYNTAX ERROR"
-            colors: {
-              // Fucsia/magenta como color primario
-              'neon-fuchsia': {
-                '300': '#f0abfc',
-                '400': '#e879f9',
-                '500': '#d946ef', // Acento principal
-                '600': '#c026d3', // Botones
-              },
-              // Colores para el "Debug Mode" (JS Toggle)
-              'neon-cyan': '#22d3ee',
-              'neon-lime': '#a3e636',
-            },
-            // Tipografía 
-            fontFamily: {
-              'mono': ['"IBM Plex Mono"', 'monospace'], // Para cuerpo de texto
-              'sans': ['Oswald', 'Impact', 'sans-serif'], // Para titulares
-            },
-            // Sombra Neón
-            boxShadow: {
-              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
-            }
-          }
-        }
-      }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Paleta de colores "SYNTAX ERROR"
+                    colors: {
+                        // Fucsia/magenta como color primario
+                        'neon-fuchsia': {
+                            '300': '#f0abfc',
+                            '400': '#e879f9',
+                            '500': '#d946ef', // Acento principal
+                            '600': '#c026d3', // Botones
+                        },
+                        // Colores para el "Debug Mode" (JS Toggle)
+                        'neon-cyan': '#22d3ee',
+                        'neon-lime': '#a3e636',
+                    },
+                    // Tipografía 
+                    fontFamily: {
+                        'mono': ['"IBM Plex Mono"', 'monospace'], // Para cuerpo de texto
+                        'sans': ['Oswald', 'Impact', 'sans-serif'], // Para titulares
+                    },
+                    // Sombra Neón
+                    boxShadow: {
+                        'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+                    }
+                }
+            }
+        }
+    </script>
+
 
 </head>
 
 <body class="bg-black text-gray-300 font-mono pt-20">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
-        
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+
         <a href="index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
             SYNTAX ERROR
         </a>
 
         <nav class="hidden md:flex gap-4">
-            <a href="manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
-            <a href="db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
-            <a href="log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
-            <a href="media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
-            <a href="pages/contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+            <a href="manifesto.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
+            <a href="db-art.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="log-exhibits.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="media-protocol.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="pages/contact.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
         </nav>
 
         <button id="menu-btn" class="md:hidden z-50">
-            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
-        <a href="manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="manifesto.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
         <a href="db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
         <a href="log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
-        <a href="media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
-        <a href="pages/contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
+        <a href="media-protocol.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="pages/contact.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
-<main class="container mx-auto px-4 py-12">
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
-        <p class="text-fuchsia-500 text-lg mb-4">[ EJECUTANDO... /index.exe ]</p>
-        
-        <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg text-center mb-8">
-            BIENVENIDES AL CYBERFEMINISMO
-        </h1>
+    <main class="container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <p class="text-fuchsia-500 text-lg mb-4">[ EJECUTANDO... /index.exe ]</p>
 
-        <div class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-4 md:p-6 mb-10 w-full max-w-3xl">
-            <img id="main-hero-image" 
-                 src="assets/img/vns-matrix-glitch-art.png" 
-                 alt="VNS Matrix Glitch Art" 
-                 class="w-full object-cover transition-opacity duration-300"
-                 onmouseover="this.src='assets/img/vns-matrix-glitch-alt.png'"
-                 onmouseout="this.src='assets/img/vns-matrix-glitch-art.png'">
-        </div>
-        
-        <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-4 max-w-2xl text-center">
-            <p class="text-neon-lime">"We are the modern cunt."</p>
-            <p class="text-gray-300">
-                SYNTAX ERROR te invita a hackear la matriz. Somos el virus del nuevo desorden mundial.
-                Creemos en la información como arma, en la identidad como construcción,
-                y en la subversión como única vía para la libertad en la red.
-            </p>
-            <p class="text-gray-300">
-                Infiltrate, cuestiona, redefine. El código es tu arma.
-            </p>
-        </div>
+            <h1
+                class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg text-center mb-8">
+                BIENVENIDES AL CYBERFEMINISMO
+            </h1>
 
-    </div>
-</main>
+            <div class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-4 md:p-6 mb-10 w-full max-w-3xl">
+                <img id="main-hero-image" src="assets/img/vns-matrix-glitch-art.png" alt="VNS Matrix Glitch Art"
+                    class="w-full object-cover transition-opacity duration-300"
+                    onmouseover="this.src='assets/img/vns-matrix-glitch-alt.png'"
+                    onmouseout="this.src='assets/img/vns-matrix-glitch-art.png'">
+            </div>
+
+            <div
+                class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-4 max-w-2xl text-center">
+                <p class="text-neon-lime">"We are the modern cunt."</p>
+                <p class="text-gray-300">
+                    SYNTAX ERROR te invita a hackear la matriz. Somos el virus del nuevo desorden mundial.
+                    Creemos en la información como arma, en la identidad como construcción,
+                    y en la subversión como única vía para la libertad en la red.
+                </p>
+                <p class="text-gray-300">
+                    Infiltrate, cuestiona, redefine. El código es tu arma.
+                </p>
+            </div>
+
+        </div>
+    </main>
 
     <footer class="bg-gray-900 p-8 text-gray-400 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <small class="font-mono text-sm">© <span id="year"></span> SYNTAX ERROR. Proyecto TP2.</small>
@@ -119,8 +132,8 @@
 
 
     <script>
-        // Script del año
-        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+            // Script del año
+            (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
 
         // Script Menú Hamburguesa
         const menuBtn = document.getElementById('menu-btn');
@@ -130,7 +143,7 @@
             menuBtn.addEventListener('click', () => {
                 // Alterna la clase 'hidden' en el menú móvil
                 mobileMenu.classList.toggle('hidden');
-                
+
                 // Opcional: Cambiar el ícono de hamburguesa a "X"
                 if (mobileMenu.classList.contains('hidden')) {
                     // Ícono Hamburguesa
@@ -143,4 +156,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,29 +9,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'neon-fuchsia': {
-                '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
-              },
-              'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
-            },
-            fontFamily: {
-              'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
-            },
-            boxShadow: {
-              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-fuchsia': {
+                            '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
+                        },
+                        'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
+                    },
+                    fontFamily: {
+                        'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+                    }
+                }
             }
-          }
         }
-      }
     </script>
 
 
@@ -38,40 +40,51 @@
 
 <body class="bg-black text-gray-300 font-mono pt-20">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
-        
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+
         <a href="../index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
             SYNTAX ERROR
         </a>
 
         <nav class="hidden md:flex gap-4">
-            <a href="../manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
-            <a href="../db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
-            <a href="../log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
-            <a href="../media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
-            <a href="contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+            <a href="../manifesto.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
+            <a href="../db-art.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="../log-exhibits.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="../media-protocol.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="contact.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
         </nav>
 
         <button id="menu-btn" class="md:hidden z-50">
-            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
-        <a href="../manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="../manifesto.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
         <a href="../db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
         <a href="../log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
-        <a href="../media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="../media-protocol.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
         <a href="contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
     <main class="container mx-auto px-4 py-12">
-        
+
         <div class="max-w-4xl mx-auto">
             <p class="text-fuchsia-500 text-lg">[ EJECUTANDO... /pages/archiver.exe ]</p>
-            
+
             <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
                 Archivero del Sistema
             </h1>
@@ -81,29 +94,42 @@
 
             <section class="mb-10">
                 <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS LOCALES ]</h2>
-                
-                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
+
+                <div
+                    class="bg-gray-900 border border-fuchsia-500/30 p-6 flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
                     <div>
                         <h3 class="font-sans uppercase font-bold text-xl text-gray-100">PDF_Investigacion_TP2.zip</h3>
-                        <p class="text-sm text-gray-400">Contiene los PDF de Investigación de Contenido y Estrategia.</p>
+                        <p class="text-sm text-gray-400">Contiene los PDF de Investigación de Contenido y Estrategia.
+                        </p>
                     </div>
                     <a href="assets/docs/TP2-CamilaMihalyczo.zip" download
-                       class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia flex-shrink-0">
+                        class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia flex-shrink-0">
                         [ Descargar ]
                     </a>
                 </div>
             </section>
 
             <section>
-                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS EXTERNOS / LECTURAS ]</h2>
+                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ ARCHIVOS EXTERNOS / LECTURAS
+                    ]</h2>
 
                 <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed">
                     <ul class="list-disc list-inside flex flex-col gap-3">
-                        <li><span class="text-gray-400">Archivo Oficial VNS Matrix:</span> <a href="https://vnsmatrix.net/" target="_blank" class="text-fuchsia-400 hover:underline">vnsmatrix.net</a></li>
-                        <li><span class="text-gray-400">Índice de Ciberfeminismo:</span> <a href="https://cyberfeminism-index.com/" target="_blank" class="text-fuchsia-400 hover:underline">cyberfeminism-index.com</a></li>
-                        <li><span class="text-gray-400">Wikipedia (Español):</span> <a href="https://es.wikipedia.org/wiki/VNS_Matrix" target="_blank" class="text-fuchsia-400 hover:underline">es.wikipedia.org/wiki/VNS_Matrix</a></li>
-                        <li><span class="text-gray-400">Manifiesto (Fuente Primaria):</span> <a href="http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix" target="_blank" class="text-fuchsia-400 hover:underline">dpya.org</a></li>
-                        <li><span class="text-gray-400">Archivo de Artistas AWARE:</span> <a href="https://awarewomenartists.com/en/artiste/vns-matrix/" target="_blank" class="text-fuchsia-400 hover:underline">awarewomenartists.com</a></li>
+                        <li><span class="text-gray-400">Archivo Oficial VNS Matrix:</span> <a
+                                href="https://vnsmatrix.net/" target="_blank"
+                                class="text-fuchsia-400 hover:underline">vnsmatrix.net</a></li>
+                        <li><span class="text-gray-400">Índice de Ciberfeminismo:</span> <a
+                                href="https://cyberfeminism-index.com/" target="_blank"
+                                class="text-fuchsia-400 hover:underline">cyberfeminism-index.com</a></li>
+                        <li><span class="text-gray-400">Wikipedia (Español):</span> <a
+                                href="https://es.wikipedia.org/wiki/VNS_Matrix" target="_blank"
+                                class="text-fuchsia-400 hover:underline">es.wikipedia.org/wiki/VNS_Matrix</a></li>
+                        <li><span class="text-gray-400">Manifiesto (Fuente Primaria):</span> <a
+                                href="http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix"
+                                target="_blank" class="text-fuchsia-400 hover:underline">dpya.org</a></li>
+                        <li><span class="text-gray-400">Archivo de Artistas AWARE:</span> <a
+                                href="https://awarewomenartists.com/en/artiste/vns-matrix/" target="_blank"
+                                class="text-fuchsia-400 hover:underline">awarewomenartists.com</a></li>
                     </ul>
                 </div>
             </section>
@@ -119,8 +145,8 @@
     </footer>
 
     <script>
-        // Script del año
-        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+            // Script del año
+            (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
 
         // Script Menú Hamburguesa
         const menuBtn = document.getElementById('menu-btn');
@@ -138,4 +164,5 @@
         }
     </script>
 </body>
+
 </html>

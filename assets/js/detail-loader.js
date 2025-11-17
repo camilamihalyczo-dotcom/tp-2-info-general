@@ -1,6 +1,6 @@
 // --- Base de Datos de Obras ---
 const worksDatabase = {
-    
+
     'manifesto-1991': {
         title: "A Cyberfeminist Manifesto (1991)",
         format: "Valla publicitaria, póster, texto digital.",
@@ -72,17 +72,17 @@ const worksDatabase = {
 
 // --- Lógica del Cargador de Contenido (ACTUALIZADA PARA SWIPER) ---
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Obtener el parámetro de la URL
     const urlParams = new URLSearchParams(window.location.search);
-    const workKey = urlParams.get('work'); 
+    const workKey = urlParams.get('work');
 
     // 2. Encontrar los elementos del HTML
     const breadcrumb = document.getElementById('detail-breadcrumb');
     const titleEl = document.getElementById('detail-title');
     const formatEl = document.getElementById('detail-format');
     const descriptionEl = document.getElementById('detail-description');
-    
+
     // --- Selectores para Slider Y Video ---
     const sliderWrapper = document.querySelector('.swiper'); // Contenedor del slider
     const slidesContainer = document.getElementById('swiper-wrapper'); // Contenedor de slides
@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // ----- ES UN SLIDER DE IMÁGENES -----
             videoWrapper.style.display = 'none'; // Ocultamos el video
             sliderWrapper.classList.remove('hidden'); // Mostramos el slider
-            
+
             // 5. "Rellenar" el slider de Swiper
-            let slidesHTML = ''; 
+            let slidesHTML = '';
             workData.images.forEach(image => {
                 slidesHTML += `
                     <div class="swiper-slide bg-black">
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     delay: 3500,
                     disableOnInteraction: false,
                 },
-                
+
                 // Paginación (puntitos)
                 pagination: {
                     el: '.swiper-pagination',

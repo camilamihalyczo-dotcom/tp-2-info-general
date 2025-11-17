@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,29 +9,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'neon-fuchsia': {
-                '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
-              },
-              'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
-            },
-            fontFamily: {
-              'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
-            },
-            boxShadow: {
-              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-fuchsia': {
+                            '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
+                        },
+                        'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
+                    },
+                    fontFamily: {
+                        'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+                    }
+                }
             }
-          }
         }
-      }
     </script>
 
 
@@ -38,81 +40,104 @@
 
 <body class="bg-black text-gray-300 font-mono pt-20">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
-        
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+
         <a href="index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
             SYNTAX ERROR
         </a>
 
         <nav class="hidden md:flex gap-4">
-            <a href="manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
-            <a href="db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
-            <a href="log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
-            <a href="media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
-            <a href="pages/contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+            <a href="manifesto.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
+            <a href="db-art.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="log-exhibits.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="media-protocol.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="pages/contact.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
         </nav>
 
         <button id="menu-btn" class="md:hidden z-50">
-            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
-        <a href="manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="manifesto.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
         <a href="db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
         <a href="log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
-        <a href="media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
-        <a href="pages/contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
+        <a href="media-protocol.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="pages/contact.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
     <main class="container mx-auto px-4 py-12">
-        
+
         <div class="max-w-4xl mx-auto">
             <p class="text-fuchsia-500 text-lg">[ LEYENDO ARCHIVO... /log.exe ]</p>
-                
+
             <h1 class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
                 LOG / EXHIBITS
             </h1>
             <p class="text-lg leading-relaxed max-w-3xl mb-10">
                 Registro de eventos, fechas clave e integrantes del colectivo VNS Matrix.
             </p>
-            
+
             <section class="mb-10">
-                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ QUIÉNES SOMOS: LAS SABOTEADORAS ]</h2>
-                
+                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ QUIÉNES SOMOS: LAS
+                    SABOTEADORAS ]</h2>
+
                 <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-6">
-                    
+
                     <div class="border border-fuchsia-500/50">
-                        <img src="assets/img/vns-matrix-members.webp" alt="Foto de las 4 integrantes de VNS Matrix" class="w-full object-cover">
+                        <img src="assets/img/vns-matrix-members.webp" alt="Foto de las 4 integrantes de VNS Matrix"
+                            class="w-full object-cover">
                     </div>
-                    
-                    <p><span class="text-fuchsia-400">[MIEMBROS]:</span> Virginia Barratt, Francesca da Rimini, Julianne Pierce, Josephine Starrs.</p>
+
+                    <p><span class="text-fuchsia-400">[MIEMBROS]:</span> Virginia Barratt, Francesca da Rimini, Julianne
+                        Pierce, Josephine Starrs.</p>
 
                     <blockquote class="border-l-4 border-fuchsia-500 pl-4 italic text-gray-400">
-                        "Era el verano del 91. (...) Éramos cuatro chicas. Teníamos calor, nos aburríamos y éramos pobres (...) Decidimos que era más divertido jugar con ordenadores que mirarnos continuamente la concha y así (...) se convirtió en VNS Matrix."
+                        "Era el verano del 91. (...) Éramos cuatro chicas. Teníamos calor, nos aburríamos y éramos
+                        pobres (...) Decidimos que era más divertido jugar con ordenadores que mirarnos continuamente la
+                        concha y así (...) se convirtió en VNS Matrix."
                         <span class="block not-italic text-gray-300 mt-2">- Francesca da Rimini</span>
                     </blockquote>
                 </div>
             </section>
 
             <section>
-                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ LEGADO: EL VIRUS SIGUE ACTIVO ]</h2>
+                <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ LEGADO: EL VIRUS SIGUE ACTIVO
+                    ]</h2>
 
                 <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-4">
                     <p><span class="text-neon-lime">[STATUS]:</span> Pioneras del Ciberfeminismo.</p>
-                    <p>No solo popularizaron el término, sino que le dieron una identidad, una estética y un método. Demostraron que el feminismo tenía un lugar crucial en la emergente cultura digital.</p>
-                    
-                    <p class="border-t border-gray-700/50 pt-4"><span class="text-neon-lime">[RELEVANCIA_ACTUAL]:</span> Crítica a "Big Tech".</p>
-                    <p>Los temas que denunciaban en los 90 hoy son problemas centrales. Su "Big Daddy Mainframe" es la metáfora perfecta para "Big Tech". La vigilancia de datos y la misoginia en la cultura gamer son la continuación directa de la batalla que ellas comenzaron.</p>
-                
+                    <p>No solo popularizaron el término, sino que le dieron una identidad, una estética y un método.
+                        Demostraron que el feminismo tenía un lugar crucial en la emergente cultura digital.</p>
+
+                    <p class="border-t border-gray-700/50 pt-4"><span class="text-neon-lime">[RELEVANCIA_ACTUAL]:</span>
+                        Crítica a "Big Tech".</p>
+                    <p>Los temas que denunciaban en los 90 hoy son problemas centrales. Su "Big Daddy Mainframe" es la
+                        metáfora perfecta para "Big Tech". La vigilancia de datos y la misoginia en la cultura gamer son
+                        la continuación directa de la batalla que ellas comenzaron.</p>
+
                     <div class="text-right text-sm mt-4">
-                        <span class="text-gray-900 transition-colors duration-300 hover:text-fuchsia-400 cursor-help" title="[FRAGMENTO 2/4 ENCONTRADO]">
+                        <span class="text-gray-900 transition-colors duration-300 hover:text-fuchsia-400 cursor-help"
+                            title="[FRAGMENTO 2/4 ENCONTRADO]">
                             es una linea
                         </span>
                     </div>
-                    </div>
+                </div>
             </section>
 
         </div>
@@ -126,8 +151,8 @@
     </footer>
 
     <script>
-        // Script del año
-        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+            // Script del año
+            (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
 
         // Script Menú Hamburguesa
         const menuBtn = document.getElementById('menu-btn');
@@ -145,4 +170,5 @@
         }
     </script>
 </body>
+
 </html>

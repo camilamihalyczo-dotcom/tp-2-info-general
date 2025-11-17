@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,29 +9,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'neon-fuchsia': {
-                '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
-              },
-              'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
-            },
-            fontFamily: {
-              'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
-            },
-            boxShadow: {
-              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-fuchsia': {
+                            '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
+                        },
+                        'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
+                    },
+                    fontFamily: {
+                        'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+                    }
+                }
             }
-          }
         }
-      }
     </script>
 
 
@@ -38,56 +40,71 @@
 
 <body class="bg-black text-gray-300 font-mono pt-20">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
-        
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+
         <a href="../index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
             SYNTAX ERROR
         </a>
 
         <nav class="hidden md:flex gap-4">
-            <a href="../manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
-            <a href="../db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
-            <a href="../log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
-            <a href="../media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
-            <a href="contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+            <a href="../manifesto.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
+            <a href="../db-art.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="../log-exhibits.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="../media-protocol.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="contact.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
         </nav>
 
         <button id="menu-btn" class="md:hidden z-50">
-            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
-        <a href="../manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="../manifesto.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
         <a href="../db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
         <a href="../log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
-        <a href="../media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="../media-protocol.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
         <a href="contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
     <main class="container mx-auto px-4 py-12">
-        
+
         <div class="max-w-2xl mx-auto">
             <p class="text-fuchsia-500 text-lg">[ EJECUTANDO... /pages/id-access.exe ]</p>
-            
+
             <form id="login-form" class="bg-gray-900 border-2 border-fuchsia-500 shadow-neon-fuchsia p-6 md:p-8">
                 <h1 class="font-sans uppercase font-extrabold text-3xl md:text-4xl text-gray-100 drop-shadow-lg mb-2">
                     AUTHENTICATION
                 </h1>
                 <p class="text-lg leading-relaxed mb-6">
-                    Se requiere frase de bypass para acceder al log de desarrollo. Busca los 4 fragmentos ocultos en el sitio.
+                    Se requiere frase de bypass para acceder al log de desarrollo. Busca los 4 fragmentos ocultos en el
+                    sitio.
                 </p>
-                
+
                 <div class="mb-4">
-                    <label for="passphrase" class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">PASSPHRASE:</label>
+                    <label for="passphrase"
+                        class="block text-fuchsia-400 font-sans uppercase text-lg mb-2">PASSPHRASE:</label>
                     <input type="password" id="passphrase" name="passphrase" required
-                           class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg">
-                    <p class="text-neon-lime text-sm mt-2 hidden" id="error-message">[ ACCESS DENIED: FRASE INCORRECTA ]</p>
+                        class="w-full p-2 bg-gray-800 border-2 border-fuchsia-500/50 focus:outline-none focus:ring-2 focus:ring-fuchsia-600 focus:border-fuchsia-600 text-gray-100 font-mono text-lg">
+                    <p class="text-neon-lime text-sm mt-2 hidden" id="error-message">[ ACCESS DENIED: FRASE INCORRECTA ]
+                    </p>
                 </div>
-                
-                <button type="submit" class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
+
+                <button type="submit"
+                    class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
                     [ Infiltrar Sistema ]
                 </button>
             </form>
@@ -110,9 +127,12 @@
                         <li>https://vnsmatrix.net/</li>
                         <li>https://cyberfeminism-index.com/</li>
                         <li>https://es.wikipedia.org/wiki/VNS_Matrix</li>
-                        <li>https://en.wikipedia.org/wiki/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix</li>
-                        <li>https://medium.com/siemprecyborgnuncadiosa/el-virus-del-nuevo-desorden-social-c0e67c2e2796</li>
-                        <li>http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix</li>
+                        <li>https://en.wikipedia.org/wiki/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix
+                        </li>
+                        <li>https://medium.com/siemprecyborgnuncadiosa/el-virus-del-nuevo-desorden-social-c0e67c2e2796
+                        </li>
+                        <li>http://dpya.org/wiki/index.php/1991_-_Manifiesto_ciberfeminista_para_el_siglo_XXI_-_VNS_Matrix
+                        </li>
                         <li>https://www.mujeresenred.net/spip.php?article1531</li>
                         <li>https://awarewomenartists.com/en/artiste/vns-matrix/</li>
                         <li>https://www.biennaleofsydney.art/participants/vns-matrix/</li>
@@ -135,8 +155,8 @@
     </footer>
 
     <script>
-        // Script del año
-        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+            // Script del año
+            (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
 
         // Script Menú Hamburguesa
         const menuBtn = document.getElementById('menu-btn');
@@ -153,7 +173,8 @@
             });
         }
     </script>
-    
+
     <script src="../assets/js/validation-bypass.js"></script>
 </body>
+
 </html>

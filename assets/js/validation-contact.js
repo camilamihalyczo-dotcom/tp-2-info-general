@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Selecciona todos los elementos necesarios
     const contactForm = document.getElementById('contact-form');
-    
+
     // Inputs
     const callsignInput = document.getElementById('callsign');
     const emailInput = document.getElementById('email');
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const priorityError = document.getElementById('priority-error');
     const msgError = document.getElementById('msg-error');
     const termsError = document.getElementById('terms-error');
-    
+
     // Mensaje de Éxito
     const successMessage = document.getElementById('success-message');
-    
+
     // Botón de envío
     const submitButton = contactForm.querySelector('button[type="submit"]');
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Función principal de validación
     const validateForm = () => {
         let isValid = true; // Asumiendo que el formulario es válido
-        
+
         // Oculta todos los mensajes de error al empezar
         callsignError.classList.add('hidden');
         emailError.classList.add('hidden');
@@ -87,19 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Evento 'submit' del formulario
     contactForm.addEventListener('submit', (event) => {
-        
+
         event.preventDefault(); // Para que que la página no se recargue
-        
+
         if (validateForm()) {
             // Si el formulario es válido...
-            
+
             // Cambia el texto del botón
             submitButton.innerText = "[ ENVIANDO... ]";
             submitButton.disabled = true; // Deshabilita el botón
 
             // 1. Objeto FormData con los datos del formulario
             const formData = new FormData(contactForm);
-            
+
             // 2. Datos a un objeto JSON
             const object = {};
             formData.forEach((value, key) => {
@@ -116,34 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: json
             })
-            .then(async (response) => {
-                let jsonResponse = await response.json();
-                if (response.status == 200) {
-                   // Éxito
-                    successMessage.classList.remove('hidden');
-                    contactForm.reset(); // Limpia el formulario
-                } else {
-                    // Hubo un error en el servidor
-                    console.log(response);
-                    alert(`Error: ${jsonResponse.message}`);
-                }
-            })
-            .catch(error => {
-                // Hubo un error de red u otro
-                console.log(error);
-                alert("Error al enviar la transmisión. Intente de nuevo.");
-            })
-            .finally(() => {
-                // Pase lo que pase, volvemos a habilitar el botón
-                submitButton.innerText = "[ Enviar Transmisión ]";
-                submitButton.disabled = false;
-                
-                // Ocultamos el mensaje de éxito después de 3 seg
-                setTimeout(() => {
-                    successMessage.classList.add('hidden');
-                }, 3000);
-            });
-            
+                .then(async (response) => {
+                    let jsonResponse = await response.json();
+                    if (response.status == 200) {
+                        // Éxito
+                        successMessage.classList.remove('hidden');
+                        contactForm.reset(); // Limpia el formulario
+                    } else {
+                        // Hubo un error en el servidor
+                        console.log(response);
+                        alert(`Error: ${jsonResponse.message}`);
+                    }
+                })
+                .catch(error => {
+                    // Hubo un error de red u otro
+                    console.log(error);
+                    alert("Error al enviar la transmisión. Intente de nuevo.");
+                })
+                .finally(() => {
+                    // Pase lo que pase, volvemos a habilitar el botón
+                    submitButton.innerText = "[ Enviar Transmisión ]";
+                    submitButton.disabled = false;
+
+                    // Ocultamos el mensaje de éxito después de 3 seg
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 3000);
+                });
+
         } else {
             // Si hay errores de validación...
             console.log('Formulario inválido, por favor revise los errores.');

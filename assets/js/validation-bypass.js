@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Evento 'submit' del formulario
         loginForm.addEventListener('submit', (event) => {
-            
+
             // Para que la página se recargue (comportamiento por defecto)
-            event.preventDefault(); 
+            event.preventDefault();
 
             // 3. El valor del input, se limpia y se pasa a minúscula
             const userInput = passphraseInput.value.trim().toLowerCase();
@@ -28,22 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // 4. Compara el input del usuario con la frase secreta
             if (userInput === secretPassphrase) {
                 // ¡ÉXITO!
-                
+
                 // Oculta el mensaje de error (si estaba visible)
                 errorMessage.classList.add('hidden');
-                
+
                 // Oculta el formulario
                 loginForm.classList.add('hidden');
-                
+
                 // Div con tus datos y la bibliografía
                 developerInfo.classList.remove('hidden');
-                
+
             } else {
                 // ¡ERROR!
-                
+
                 // El mensaje de "ACCESO DENEGADO"
                 errorMessage.classList.remove('hidden');
-                
+
                 // Borra el contenido del input para que intente de nuevo
                 passphraseInput.value = "";
             }

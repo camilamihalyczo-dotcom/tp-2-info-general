@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,108 +9,126 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'neon-fuchsia': {
-                '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
-              },
-              'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
-            },
-            fontFamily: {
-              'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
-            },
-            boxShadow: {
-              'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-fuchsia': {
+                            '300': '#f0abfc', '400': '#e879f9', '500': '#d946ef', '600': '#c026d3',
+                        },
+                        'neon-cyan': '#22d3ee', 'neon-lime': '#a3e636',
+                    },
+                    fontFamily: {
+                        'mono': ['"IBM Plex Mono"', 'monospace'], 'sans': ['Oswald', 'Impact', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-fuchsia': '0 0 15px #d946ef, 0 0 5px #d946ef',
+                    }
+                }
             }
-          }
         }
-      }
     </script>
 
     <style>
-      /* Estilo para las flechas de Swiper */
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #d946ef; /* neon-fuchsia-500 */
-        opacity: 0.5;
-        transition: opacity 0.2s;
-      }
-      .swiper-button-next:hover,
-      .swiper-button-prev:hover {
-        opacity: 1;
-      }
-      /* Estilo para la paginación (puntitos) */
-      .swiper-pagination-bullet {
-        background: #d946ef;
-        opacity: 0.5;
-      }
-      .swiper-pagination-bullet-active {
-        opacity: 1;
-      }
+        /* Estilo para las flechas de Swiper */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #d946ef;
+            /* neon-fuchsia-500 */
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            opacity: 1;
+        }
+
+        /* Estilo para la paginación (puntitos) */
+        .swiper-pagination-bullet {
+            background: #d946ef;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
     </style>
 
 </head>
 
 <body class="bg-black text-gray-300 font-mono pt-20">
 
-    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
-        
+    <header
+        class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm p-4 flex justify-between items-center border-b border-fuchsia-500/30">
+
         <a href="../index.html" class="font-sans font-extrabold text-3xl uppercase text-fuchsia-500 drop-shadow-lg">
             SYNTAX ERROR
         </a>
 
         <nav class="hidden md:flex gap-4">
-            <a href="../manifesto.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
-            <a href="../db-art.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
-            <a href="../log-exhibits.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
-            <a href="../media-protocol.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
-            <a href="contact.html" class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
+            <a href="../manifesto.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Manifiesto</a>
+            <a href="../db-art.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Galería</a>
+            <a href="../log-exhibits.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Log</a>
+            <a href="../media-protocol.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Protocolo</a>
+            <a href="contact.html"
+                class="font-sans uppercase text-gray-300 hover:text-fuchsia-400 transition-colors duration-200">Contacto</a>
         </nav>
 
         <button id="menu-btn" class="md:hidden z-50">
-            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            <svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
             </svg>
         </button>
     </header>
 
-    <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
-        <a href="../manifesto.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
+    <div id="mobile-menu"
+        class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black z-40 flex flex-col justify-center items-center gap-6">
+        <a href="../manifesto.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Manifiesto</a>
         <a href="../db-art.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Galería</a>
         <a href="../log-exhibits.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Log</a>
-        <a href="../media-protocol.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
+        <a href="../media-protocol.html"
+            class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Protocolo</a>
         <a href="contact.html" class="font-sans uppercase text-2xl text-gray-300 hover:text-fuchsia-400">Contacto</a>
     </div>
 
     <main class="container mx-auto px-4 py-12">
-        
-        <div class="max-w-6xl mx-auto"> <p id="detail-breadcrumb" class="text-fuchsia-500 text-lg">[ CARGANDO LOG... ]</p>
-            
-            <h1 id="detail-title" class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
+
+        <div class="max-w-6xl mx-auto">
+            <p id="detail-breadcrumb" class="text-fuchsia-500 text-lg">[ CARGANDO LOG... ]</p>
+
+            <h1 id="detail-title"
+                class="font-sans uppercase font-extrabold text-4xl md:text-6xl text-gray-100 drop-shadow-lg mb-4">
                 CARGANDO...
             </h1>
 
             <div id="slider-wrapper" class="swiper h-[70vh] mb-6 border-2 border-fuchsia-500 shadow-neon-fuchsia">
                 <div id="swiper-wrapper" class="swiper-wrapper">
-                    </div>
-                
+                </div>
+
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-                
+
                 <div class="swiper-pagination"></div>
             </div>
 
             <div id="video-wrapper" class="hidden mb-6 border-2 border-fuchsia-500 shadow-neon-fuchsia aspect-video">
-                </div>
+            </div>
 
             <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-4">
                 <p><span class="text-fuchsia-400">[FORMATO]:</span> <span id="detail-format">...</span></p>
@@ -117,7 +136,8 @@
             </div>
 
             <div class="mt-8">
-                <a href="../db-art.html" class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
+                <a href="../db-art.html"
+                    class="inline-block bg-fuchsia-600 text-gray-100 font-sans uppercase font-bold px-6 py-3 hover:bg-fuchsia-500 transition-colors duration-200 shadow-neon-fuchsia">
                     [ Volver a Galería ]
                 </a>
             </div>
@@ -133,8 +153,8 @@
     </footer>
 
     <script>
-        // Script del año
-        (function(){ const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+            // Script del año
+            (function () { const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
 
         // Script Menú Hamburguesa
         const menuBtn = document.getElementById('menu-btn');
@@ -151,8 +171,9 @@
             });
         }
     </script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="../assets/js/detail-loader.js"></script>
 </body>
+
 </html>
