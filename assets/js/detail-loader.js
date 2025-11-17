@@ -1,4 +1,4 @@
-// --- Base de Datos de Obras (ACTUALIZADA con .jpg) ---
+// --- Base de Datos de Obras ---
 const worksDatabase = {
     
     'manifesto-1991': {
@@ -12,11 +12,10 @@ const worksDatabase = {
             { src: "../assets/img/gallery/work-manifesto-4.jpg", alt: "Manifiesto 4" }
         ]
     },
-
     'all-new-gen': {
         title: "All New Gen (1993-1995)",
         format: "Videojuego interactivo (CD-ROM) e instalación.",
-        description: "Esta es su obra interactiva más célebre. 'All New Gen' es un videojuego que parodia y subvierte los juegos de disparos ('shoot em up') de la época. En lugar de rescatar a una princesa, la misión es 'sabotear los bancos de datos del insidioso Big Daddy Mainframe'.",
+        description: "Esta es su obra interactiva más célebre. 'All New Gen' es un videojuego que parodia y subvierte los juegos de disparos (shoot 'em up) de la época. En lugar de rescatar a una princesa, la misión es 'sabotear los bancos de datos del insidioso Big Daddy Mainframe'.",
         images: [
             { src: "../assets/img/gallery/work-all-new-gen-1.jpg", alt: "All New Gen 1" },
             { src: "../assets/img/gallery/work-all-new-gen-2.jpg", alt: "All New Gen 2" },
@@ -24,11 +23,10 @@ const worksDatabase = {
             { src: "../assets/img/gallery/work-all-new-gen-4.jpg", alt: "All New Gen 4" }
         ]
     },
-
     'dna-sluts': {
         title: 'Las "DNA Sluts" (1993)',
         format: "Personajes de videojuego / Light Boxes (cajas de luz).",
-        description: "Son las heroínas ('sheroínas') del juego 'All New Gen'. Personajes como Patina de Panties, Dentata y la Princesa del Moco (Princess of Slime) son renegadas que asisten al jugador. Fueron presentadas también como obras de arte individuales en formato de caja de luz.",
+        description: "Son las heroínas del juego 'All New Gen'. Personajes como Patina de Panties, Dentata y la Princesa del Moco (Princess of Slime) son sheroínas (she-hero) renegadas que asisten al jugador. Fueron presentadas también como obras de arte individuales en formato de caja de luz, llevando la estética del juego a la galería.",
         images: [
             { src: "../assets/img/gallery/work-dna-sluts-1.jpg", alt: "DNA Sluts 1" },
             { src: "../assets/img/gallery/work-dna-sluts-2.jpg", alt: "DNA Sluts 2" },
@@ -36,7 +34,6 @@ const worksDatabase = {
             { src: "../assets/img/gallery/work-dna-sluts-4.jpg", alt: "DNA Sluts 4" }
         ]
     },
-
     'infiltrate': {
         title: "INFILTRATE (1994)",
         format: "Lightbox (caja de luz).",
@@ -48,7 +45,6 @@ const worksDatabase = {
             { src: "../assets/img/gallery/work-infiltrate-4.jpg", alt: "INFILTRATE 4" }
         ]
     },
-
     'bitch-mutant': {
         title: "Bitch Mutant Manifesto (1996)",
         format: "Texto digital / Obra sonora.",
@@ -60,11 +56,10 @@ const worksDatabase = {
             { src: "../assets/img/gallery/work-bitch-mutant-4.jpg", alt: "Bitch Mutant Manifesto 4" }
         ]
     },
-
     'bad-code': {
         title: "Bad Code (1996-1999)",
         format: "CD-ROM / Proyecto multimedia.",
-        description: "Un proyecto posterior que continuó explorando los temas de 'All New Gen'. 'Bad Code' (Código Maligno) profundiza en la idea de que el código (informático, genético, moral) puede ser corrompido. La obra incluía imágenes 3D, animaciones y video.",
+        description: "Un proyecto posterior que continuó explorando los temas de 'All New Gen'. 'Bad Code' (Código Maligno) profundiza en la idea de que el código (informático, genético, moral) puede ser corrompido. La obra incluía imágenes 3D, animaciones y video, siendo una pieza multimedia avanzada para su tiempo.",
         images: [
             { src: "../assets/img/gallery/work-bad-code-1.jpg", alt: "Bad Code 1" },
             { src: "../assets/img/gallery/work-bad-code-2.jpg", alt: "Bad Code 2" },
@@ -75,7 +70,7 @@ const worksDatabase = {
 };
 
 
-// --- Lógica del Cargador de Contenido (Sin cambios) ---
+// --- Lógica del Cargador de Contenido ---
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Obtener el parámetro de la URL
@@ -88,10 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const formatEl = document.getElementById('detail-format');
     const descriptionEl = document.getElementById('detail-description');
     
-    // --- LÓGICA DE GLIDE.JS ---
-    const slidesContainer = document.getElementById('glide-slides'); 
+    // --- Selectores para el Slider ---
+    const sliderContainer = document.querySelector('.relative.border-2'); // Contenedor del slider
+    const sliderImage = document.getElementById('slider-image');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const counterEl = document.getElementById('slider-counter');
 
-    if (workKey && worksDatabase[workKey] && slidesContainer) {
+    if (workKey && worksDatabase[workKey] && sliderImage) {
         // 3. Si encontramos la obra...
         const workData = worksDatabase[workKey];
 
@@ -102,26 +101,39 @@ document.addEventListener('DOMContentLoaded', () => {
         formatEl.innerText = workData.format;
         descriptionEl.innerText = workData.description;
 
-        // 5. "Rellenar" el slider
-        let slidesHTML = ''; // Variable para guardar el HTML de los slides
-        workData.images.forEach(image => {
-            slidesHTML += `
-                <li class="glide__slide bg-black">
-                    <img src="${image.src}" alt="${image.alt}" class="w-full h-full object-contain">
-                </li>
-            `;
-        });
-        slidesContainer.innerHTML = slidesHTML; // Inyectamos el HTML en la <ul>
+        // --- SLIDER SIMPLE ---
+        let currentImageIndex = 0;
+        const images = workData.images; // El array de 4 imágenes
+        const totalImages = images.length;
 
-        // 6. "Encender" Glide.js (¡IMPORTANTE!)
-        new Glide('.glide', {
-            type: 'carousel', // Tipo slider
-            startAt: 0,
-            perView: 1,       // 1 imagen a la vez
-            autoplay: 3500,   // Efecto de movimiento
-            hoverpause: true, // Pausa al pasar el mouse
-            gap: 0
-        }).mount();
+        function showImage(index) {
+            // Carga la imagen
+            sliderImage.src = images[index].src;
+            sliderImage.alt = images[index].alt;
+            // Actualiza el contador
+            counterEl.innerText = `${index + 1} / ${totalImages}`;
+        }
+
+        // Evento para el botón "Siguiente"
+        nextBtn.addEventListener('click', () => {
+            currentImageIndex++;
+            if (currentImageIndex >= totalImages) {
+                currentImageIndex = 0; // Vuelve al principio
+            }
+            showImage(currentImageIndex);
+        });
+
+        // Evento para el botón "Anterior"
+        prevBtn.addEventListener('click', () => {
+            currentImageIndex--;
+            if (currentImageIndex < 0) {
+                currentImageIndex = totalImages - 1; // Va al final
+            }
+            showImage(currentImageIndex);
+        });
+
+        // Cargar la primera imagen al iniciar
+        showImage(0);
 
     } else {
         // 7. Si hay un error...
@@ -129,8 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
         breadcrumb.innerText = "[ ERROR DE LECTURA ]";
         titleEl.innerText = "[ ARCHIVO NO ENCONTRADO ]";
         descriptionEl.innerText = "El log de esta obra no se ha encontrado en la base de datos. Por favor, vuelva a la galería.";
-        if (slidesContainer) {
-            slidesContainer.closest('.glide').style.display = 'none'; // Oculta el slider si hay error
+        if (sliderContainer) {
+            sliderContainer.style.display = 'none'; // Oculta el slider si hay error
         }
     }
 });

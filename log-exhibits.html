@@ -83,11 +83,18 @@
             <section class="mb-10">
                 <h2 class="font-sans uppercase font-bold text-3xl text-fuchsia-400 mb-4">[ QUIÉNES SOMOS: LAS SABOTEADORAS ]</h2>
                 
-                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-4">
-                    <p><span class="text-fuchsia-400">[FECHA]:</span> 1991</p>
-                    <p><span class="text-fuchsia-400">[UBICACIÓN]:</span> Adelaida, Australia</p>
+                <div class="bg-gray-900 border border-fuchsia-500/30 p-6 text-lg leading-relaxed flex flex-col gap-6">
+                    
+                    <div class="border border-fuchsia-500/50">
+                        <img src="assets/img/vns-matrix-members.png" alt="Foto de las 4 integrantes de VNS Matrix" class="w-full object-cover">
+                    </div>
+                    
                     <p><span class="text-fuchsia-400">[MIEMBROS]:</span> Virginia Barratt, Francesca da Rimini, Julianne Pierce, Josephine Starrs.</p>
-                    <p><span class="text-fuchsia-400">[CONTEXTO]:</span> Su formación fue una respuesta directa al ascenso de la cultura de internet y los videojuegos, vistos como territorios dominados por una mirada masculina. Decidieron "irrumpir en el cártel del porno y hacer algo de chick porn".</p>
+
+                    <blockquote class="border-l-4 border-fuchsia-500 pl-4 italic text-gray-400">
+                        "Era el verano del 91. (...) Éramos cuatro chicas. Teníamos calor, nos aburríamos y éramos pobres (...) Decidimos que era más divertido jugar con ordenadores que mirarnos continuamente la concha y así (...) se convirtió en VNS Matrix."
+                        <span class="block not-italic text-gray-300 mt-2">- Francesca da Rimini</span>
+                    </blockquote>
                 </div>
             </section>
 
@@ -98,12 +105,15 @@
                     <p><span class="text-neon-lime">[STATUS]:</span> Pioneras del Ciberfeminismo.</p>
                     <p>No solo popularizaron el término, sino que le dieron una identidad, una estética y un método. Demostraron que el feminismo tenía un lugar crucial en la emergente cultura digital.</p>
                     
-                    <p class="border-t border-gray-700/50 pt-4"><span class="text-neon-lime">[INFLUENCIA]:</span> Net.Art y Cultura Digital.</p>
-                    <p>Su uso de la red, CD-ROMs y vallas publicitarias como espacios de galería fue pionero, fusionando el arte conceptual con la cultura digital.</p>
-
                     <p class="border-t border-gray-700/50 pt-4"><span class="text-neon-lime">[RELEVANCIA_ACTUAL]:</span> Crítica a "Big Tech".</p>
-                    <p>Los temas que denunciaban en los 90 hoy son centrales: la vigilancia de datos, la misoginia en la cultura *gamer* y la lucha por la identidad en espacios virtuales. Su "Big Daddy Mainframe" es la metáfora perfecta para las grandes corporaciones tecnológicas de hoy.</p>
-                </div>
+                    <p>Los temas que denunciaban en los 90 hoy son problemas centrales. Su "Big Daddy Mainframe" es la metáfora perfecta para "Big Tech". La vigilancia de datos y la misoginia en la cultura gamer son la continuación directa de la batalla que ellas comenzaron.</p>
+                
+                    <div class="text-right text-sm mt-4">
+                        <span class="text-gray-900 transition-colors duration-300 hover:text-fuchsia-400 cursor-help" title="[FRAGMENTO 2/4 ENCONTRADO]">
+                            es una linea
+                        </span>
+                    </div>
+                    </div>
             </section>
 
         </div>
@@ -128,7 +138,7 @@
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
                 if (mobileMenu.classList.contains('hidden')) {
-                    menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-widh="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
+                    menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>`;
                 } else {
                     menuBtn.innerHTML = `<svg class="w-6 h-6 text-fuchsia-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
                 }
