@@ -1,52 +1,68 @@
-// assets/js/validation-bypass.js
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- FRASE SECRETA ---
-    // (La frase completa del Easter Egg. En minúscula)
-    const secretPassphrase = "el clitoris es una linea directa a la matriz";
+    // --- FRASES SECRETAS (Array con opciones) ---
+    // Agregamos todas las combinaciones válidas (con y sin tildes)
+    const secretPassphrases = [
+        "el clitoris es una linea directa a la matriz", // Sin tildes
+        "el clítoris es una linea directa a la matriz", // Con tilde en clítoris
+        "el clitoris es una línea directa a la matriz", // Con tilde en línea
+        "el clítoris es una línea directa a la matriz"  // Con ambas tildes
+    ];
 
-    // 1. Selecciona todos los elementos que necesitamos
+    // 1. Seleccionamos todos los elementos que necesitamos
     const loginForm = document.getElementById('login-form');
     const passphraseInput = document.getElementById('passphrase');
     const errorMessage = document.getElementById('error-message');
     const developerInfo = document.getElementById('developer-info');
+    const showPassToggle = document.getElementById('show-pass-toggle'); // Checkbox
 
     // Nos aseguramos de que el script solo corra si estamos en la página correcta
-    // (es decir, la página de credenciales)
     if (loginForm && passphraseInput && errorMessage && developerInfo) {
 
-        // 2. Evento 'submit' del formulario
+        // 2. Lógica del "submit" del formulario
         loginForm.addEventListener('submit', (event) => {
+            
+            // Prevenimos que la página se recargue
+            event.preventDefault(); 
 
-            // Para que la página se recargue (comportamiento por defecto)
-            event.preventDefault();
-
-            // 3. El valor del input, se limpia y se pasa a minúscula
+            // 3. Obtenemos el valor del input, lo limpiamos y lo pasamos a minúscula
             const userInput = passphraseInput.value.trim().toLowerCase();
 
-            // 4. Compara el input del usuario con la frase secreta
-            if (userInput === secretPassphrase) {
+            // 4. Comparamos (Revisamos si el input está INCLUIDO en el array)
+            if (secretPassphrases.includes(userInput)) {
                 // ¡ÉXITO!
-
-                // Oculta el mensaje de error (si estaba visible)
+                
+                // Ocultamos el mensaje de error (si estaba visible)
                 errorMessage.classList.add('hidden');
-
-                // Oculta el formulario
+                
+                // Ocultamos el formulario
                 loginForm.classList.add('hidden');
-
-                // Div con tus datos y la bibliografía
+                
+                // Mostramos el div con tus datos y la bibliografía
                 developerInfo.classList.remove('hidden');
-
+                
             } else {
                 // ¡ERROR!
-
-                // El mensaje de "ACCESO DENEGADO"
+                
+                // Mostramos el mensaje de "ACCESO DENEGADO"
                 errorMessage.classList.remove('hidden');
-
-                // Borra el contenido del input para que intente de nuevo
+                
+                // Borramos el contenido del input para que intente de nuevo
                 passphraseInput.value = "";
             }
         });
+
+        // 3. LÓGICA DEL CHECKBOX "MOSTRAR FRASE"
+        if (showPassToggle) {
+            showPassToggle.addEventListener('change', () => {
+                if (showPassToggle.checked) {
+                    // Si está tildado, mostrar texto
+                    passphraseInput.type = 'text';
+                } else {
+                    // Si no, volver a password
+                    passphraseInput.type = 'password';
+                }
+            });
+        }
     }
 });
